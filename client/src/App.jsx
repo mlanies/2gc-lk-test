@@ -10,7 +10,8 @@ import "@/common/styles/main.sass";
 import Settings from "@/pages/Settings";
 import Apps from "@/pages/Apps";
 
-export const GITHUB_URL = "https://github.com/gnmyt/Nexterm";
+export const GITHUB_URL = "#";
+export const DISCORD_URL = "#";
 
 const App = () => {
     const router = createBrowserRouter([
