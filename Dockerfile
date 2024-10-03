@@ -22,7 +22,7 @@ RUN apk add --no-cache \
     && apk add --no-cache --virtual .build-deps build-base git
 
 RUN git clone --depth=1 https://github.com/mlanies/2gc-lk-test \
-    && cd guacamole-server \
+    && cd 2gc-lk-test \
     && git fetch --all --tags \
     && git checkout 1.5.5 \
     && autoreconf -fi \
