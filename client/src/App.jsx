@@ -8,9 +8,9 @@ import Root from "@/common/layouts/Root.jsx";
 import Servers from "@/pages/Servers";
 import "@/common/styles/main.sass";
 import Settings from "@/pages/Settings";
-// import Apps from "@/pages/Apps";
+import Apps from "@/pages/Apps";
 
-export const GITHUB_URL = "#";
+export const GITHUB_URL = "https://github.com/gnmyt/Nexterm";
 
 const App = () => {
     const router = createBrowserRouter([
@@ -21,7 +21,7 @@ const App = () => {
                 { path: "/", element: <Navigate to="/servers" /> },
                 { path: "/servers", element: <Servers /> },
                 { path: "/settings/*", element: <Settings/> },
-            //    { path: "/apps/*", element: <Apps /> }
+                { path: "/apps/*", element: <Apps /> }
             ],
         },
     ]);
