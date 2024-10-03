@@ -60,8 +60,8 @@ export const Sessions = () => {
                                 {parser.setUA(session.userAgent).getBrowser().name} {parser.setUA(session.userAgent).getBrowser().version}
                                 &nbsp;on {parser.setUA(session.userAgent).getOS().name} {parser.setUA(session.userAgent).getOS().version}
                             </h2>
-                            {!session.current && <p>Last activity: {new Date(session.lastActivity).toLocaleString()} from {session.ip}</p>}
-                            {session.current && <p>Current session</p>}
+                            {!session.current && <p>Последняя активность: {new Date(session.lastActivity).toLocaleString()} from {session.ip}</p>}
+                            {session.current && <p>Текущая сессия</p>}
                         </div>
                     </div>
                     <div className="session-actions">

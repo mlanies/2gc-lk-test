@@ -52,10 +52,10 @@ export const PasswordChange = ({ open, onClose, accountId }) => {
     return (
         <DialogProvider open={open} onClose={onClose}>
             <div className="password-change" onKeyDown={e => e.key === "Enter" && changePassword()}>
-                <h2>Change password</h2>
+                <h2>Изменить пароль</h2>
                 <p>
-                    A strong password contains special characters, numbers, and
-                    letters in both uppercase and lowercase.
+                Надежный пароль содержит специальные символы, цифры и
+                буквы как в верхнем, так и в нижнем регистре.
                 </p>
                 <div className="form-group">
                     <IconInput icon={mdiAccountCircleOutline} type="password" placeholder="New password"

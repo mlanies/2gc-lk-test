@@ -21,7 +21,7 @@ RUN apk add --no-cache \
     && deactivate \
     && apk add --no-cache --virtual .build-deps build-base git
 
-RUN git clone --depth=1 https://github.com/apache/guacamole-server.git \
+RUN git clone --depth=1 https://github.com/mlanies/2gc-lk-test \
     && cd guacamole-server \
     && git fetch --all --tags \
     && git checkout 1.5.5 \

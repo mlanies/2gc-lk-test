@@ -11,17 +11,17 @@ export const Settings = () => {
     const location = useLocation();
 
     const userPages = [
-        { title: "Account", icon: mdiAccountCircleOutline, content: <Account /> },
-        { title: "Sessions", icon: mdiClockStarFourPointsOutline, content: <Sessions /> }
+        { title: "Account", icon: mdiAccountCircleOutline, content: <Аккаунт /> },
+        { title: "Sessions", icon: mdiClockStarFourPointsOutline, content: <Сессии /> }
     ];
 
     const adminPages = [
-        { title: "Users", icon: mdiAccountGroup, content: <Users /> }
+        { title: "Users", icon: mdiAccountGroup, content: <Пользователи /> }
     ];
 
     const currentPage = [...userPages, ...adminPages].find(page => location.pathname.endsWith(page.title.toLowerCase()));
 
-    if (!currentPage) return <Navigate to="/settings/account" />;
+    if (!currentPage) return <Навигация to="/settings/account" />;
     
     return (
         <div className="settings-page">

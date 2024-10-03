@@ -85,57 +85,57 @@ export const ContextMenu = ({
             {type !== "server-object" && type !== "pve-object" && type !== "pve-entry" &&
                 <div className="context-item" onClick={createFolder}>
                     <Icon path={mdiFolderPlus} />
-                    <p>Create Folder</p>
+                    <p>Создать папку</p>
                 </div>}
             {type === "folder-object" && <>
                 <div className="context-item" onClick={deleteFolder}>
                     <Icon path={mdiFolderRemove} />
-                    <p>Delete Folder</p>
+                    <p>Удалить папку</p>
                 </div>
                 <div className="context-item" onClick={() => setRenameStateId(id)}>
                     <Icon path={mdiFormTextbox} />
-                    <p>Rename Folder</p>
+                    <p>Переименовать папку</p>
                 </div>
                 <div className="context-item" onClick={createServer}>
                     <Icon path={mdiServerPlus} />
-                    <p>Create Server</p>
+                    <p>Создать сервер</p>
                 </div>
                 <div className="context-item" onClick={createPVEServer}>
                     <img src={ProxmoxLogo} alt="Proxmox" />
-                    <p>Import PVE</p>
+                    <p>Импортировать PVE</p>
                 </div>
             </>}
             {type === "server-object" && <>
                 {server?.identities?.length !== 0 && <div className="context-item" onClick={connect}>
                     <Icon path={mdiConnection} />
-                    <p>Connect</p>
+                    <p>Подключиться</p>
                 </div>}
 
                 {server?.identities?.length !== 0 && server?.protocol === "ssh" &&
                     <div className="context-item" onClick={connectSFTP}>
                         <Icon path={mdiFolderOpen} />
-                        <p>Open SFTP</p>
+                        <p>Открыть SFTP</p>
                     </div>
                 }
 
                 <div className="context-item" onClick={editServer}>
                     <Icon path={mdiPencil} />
-                    <p>Edit Server</p>
+                    <p>Редактировать сервер</p>
                 </div>
                 <div className="context-item" onClick={deleteServer}>
                     <Icon path={mdiServerMinus} />
-                    <p>Delete Server</p>
+                    <p>Удалить сервер</p>
                 </div>
             </>}
 
             {type === "pve-object" && <>
                 <div className="context-item" onClick={editPVEServer}>
                     <Icon path={mdiPencil} />
-                    <p>Edit PVE</p>
+                    <p>Редактировать PVE</p>
                 </div>
                 <div className="context-item" onClick={deletePVEServer}>
                     <Icon path={mdiServerMinus} />
-                    <p>Delete PVE</p>
+                    <p>Удалить PVE</p>
                 </div>
             </>
             }
@@ -143,14 +143,14 @@ export const ContextMenu = ({
             {server?.status === "running" && <>
                 <div className="context-item" onClick={connect}>
                     <Icon path={mdiConnection} />
-                    <p>Connect</p>
+                    <p>Подключиться</p>
                 </div>
             </>}
 
             {server?.status === "running" && server.type !== "pve-shell" && <>
                 <div className="context-item" onClick={() => postPVEAction("shutdown")}>
                     <Icon path={mdiPower} />
-                    <p>Shutdown</p>
+                    <p>Выключить</p>
                 </div>
 
                 <div className="context-item" onClick={() => postPVEAction("stop")}>

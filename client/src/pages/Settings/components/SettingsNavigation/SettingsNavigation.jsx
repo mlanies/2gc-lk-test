@@ -9,7 +9,7 @@ export const SettingsNavigation = ({ userPages, adminPages }) => {
 
     return (
         <div className="settings-navigation">
-            <p>USER SETTINGS</p>
+            <p>ПОЛЬЗОВАТЕЛЬСКИЕ НАСТРОЙКИ</p>
 
             <div className="settings-group">
                 {userPages.map((page, index) => (
@@ -17,7 +17,7 @@ export const SettingsNavigation = ({ userPages, adminPages }) => {
                 ))}
             </div>
 
-            {user?.role === "admin" && <p>ADMIN SETTINGS</p>}
+            {user?.role === "admin" && <p>НАСТРОЙКИ АДМИНИСТРАТОРА</p>}
             {user?.role === "admin" && <div className="settings-group">
                 {adminPages.map((page, index) => (
                     <SettingsItem key={index} icon={page.icon} title={page.title} />

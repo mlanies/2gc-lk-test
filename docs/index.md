@@ -2,16 +2,16 @@
 layout: home
 
 hero:
-  name: Nexterm
+  name: 2GC
   text: Server management
-  tagline: The open source server management software for SSH, VNC & RDP
+  tagline: The software for SSH & RDP
   actions:
     - theme: brand
       text: Run preview
       link: /preview
     - theme: alt
       text: GitHub
-      link: https://github.com/gnmyt/Nexterm
+      link: 
   image:
     src: /logo.png
     alt: MySpeed

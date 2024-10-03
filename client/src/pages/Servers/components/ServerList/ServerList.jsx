@@ -93,7 +93,7 @@ export const ServerList = ({
                 {servers && servers.length === 0 && (
                     <div className="no-servers" onContextMenu={handleContextMenu}>
                         <Icon path={mdiCursorDefaultClick} />
-                        <p>Right-click to add a new server</p>
+                        <p>Щелкните правой кнопкой мыши, чтобы добавить новый сервер</p>
                     </div>
                 )}
                 {contextMenuPosition && (

@@ -54,10 +54,10 @@ export const Account = () => {
             <TwoFactorAuthentication open={twoFactorOpen} onClose={() => setTwoFactorOpen(false)} />
             <PasswordChange open={passwordChangeOpen} onClose={() => setPasswordChangeOpen(false)} />
             <div className="account-section">
-                <h2>Account name</h2>
+                <h2>Имя учетной записи</h2>
                 <div className="section-inner">
                     <div className="form-group">
-                        <label htmlFor="firstName">First name</label>
+                        <label htmlFor="firstName">Имя</label>
                         <IconInput icon={mdiAccountCircleOutline} placeholder="First name"
                                       id="firstName" customClass={updatedField === "firstName" ? " fd-updated" : ""}
                                    value={firstName} setValue={setFirstName}
@@ -65,7 +65,7 @@ export const Account = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="lastName">Last name</label>
+                        <label htmlFor="lastName">Фамилия</label>
                         <IconInput icon={mdiAccountCircleOutline} placeholder="Last name" id="lastName"
                                       value={lastName} setValue={setLastName}
                                         customClass={updatedField === "lastName" ? " fd-updated" : ""}
@@ -80,7 +80,7 @@ export const Account = () => {
                     {user?.totpEnabled ? <p className="active">Active</p> : <p className="inactive">Inactive</p>}
                 </div>
                 <div className="section-inner">
-                    <p style={{ maxWidth: "25rem" }}>Add an extra layer of security to your account by enabling
+                    <p style={{ maxWidth: "25rem" }}>Добавьте дополнительный уровень безопасности в свою учетную запись, включив
                         two-factor authentication.</p>
                     {!user?.totpEnabled && <Button text="Enable 2FA" onClick={() => setTwoFactorOpen(true)} />}
                     {user?.totpEnabled ? <Button text="Disable 2FA" onClick={disable2FA} /> : null}
@@ -88,9 +88,9 @@ export const Account = () => {
             </div>
 
             <div className="account-section">
-                <h2>Change password</h2>
+                <h2>Изменить пароль</h2>
                 <div className="section-inner">
-                    <p style={{ maxWidth: "25rem" }}>Choose a new and secure password for your account here.</p>
+                    <p style={{ maxWidth: "25rem" }}>Выберите новый и безопасный пароль для своей учетной записи здесь.</p>
 
                     <Button text="Change password" onClick={() => setPasswordChangeOpen(true)} />
                 </div>

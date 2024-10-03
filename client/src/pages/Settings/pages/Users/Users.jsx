@@ -64,8 +64,8 @@ export const Users = () => {
                                 loadUsers={loadUsers} />
 
             <div className="user-title">
-                <h2>{users.length} users</h2>
-                <Button onClick={() => setCreateUserDialogOpen(true)} text="Create new user" />
+                <h2>{users.length} Пользователи</h2>
+                <Button onClick={() => setCreateUserDialogOpen(true)} text="Создать нового пользователя" />
             </div>
             {users.map(currentUser => (
                 <div key={currentUser.id} className="user-item">

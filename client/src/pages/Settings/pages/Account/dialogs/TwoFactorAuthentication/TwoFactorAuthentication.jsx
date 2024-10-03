@@ -41,8 +41,8 @@ export const TwoFactorAuthentication = ({open, onClose}) => {
             <div className="two-factor-dialog" onKeyDown={(event) => event.key === "Enter" && enableTotp()}>
                 <div className="info-area">
                     <h1>Enable 2FA</h1>
-                    <p>Scan the code with your authenticator app
-                        or enter <span className="totp-code">{totpObj?.secret}</span> manually.</p>
+                    <p>Сканируйте код с помощью приложения для аутентификации.
+                    или введите <span className="totp-code">{totpObj?.secret}</span> вручную.</p>
 
                     <div className="action-row">
                         <IconInput icon={mdiKey} placeholder="Enter 2FA code" value={code} setValue={setCode}
