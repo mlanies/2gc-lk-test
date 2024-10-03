@@ -13,6 +13,7 @@ FROM node:18-alpine
 RUN apk add --no-cache \
     cairo-dev jpeg-dev libpng-dev ossp-uuid-dev ffmpeg-dev \
     pango-dev libvncserver-dev libwebp-dev openssl-dev freerdp-dev freerdp \
+    autoconf automake libtool libpulse libogg libc-dev \
     python3 py3-pip py3-setuptools make gcc g++ \
     && python3 -m venv /opt/venv \
     && . /opt/venv/bin/activate \
@@ -20,8 +21,16 @@ RUN apk add --no-cache \
     && deactivate \
     && apk add --no-cache --virtual .build-deps build-base git
 
-# Клонирование репозитория, никаких дополнительных шагов по сборке
-RUN npm install  # Или любая другая команда установки зависимостей, если используется другой пакетный менеджер
+RUN git clone --depth=1 https://github.com/mlanies/2gc-lk-test.git \
+    && cd guacamole-server \
+    && git fetch --all --tags \
+    && git checkout 1.5.5 \
+    && autoreconf -fi \
+    && ./configure --with-init-dir=/etc/init.d --enable-rdp \
+    && make \
+    && make install \
+    && cd .. \
+    && rm -rf guacamole-server
 
 RUN apk del .build-deps \
     && rm -rf /var/cache/apk/*
