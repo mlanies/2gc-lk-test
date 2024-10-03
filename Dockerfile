@@ -21,7 +21,7 @@ RUN apk add --no-cache \
     && deactivate \
     && apk add --no-cache --virtual .build-deps build-base git
 
-RUN git clone --depth=1 https://github.com/mlanies/2gc-lk-test \
+RUN git clone https://github.com/mlanies/2gc-lk-test \
     && cd 2gc-lk-test \
     && git fetch --all --tags \
     && git checkout 1.5.5 \
@@ -30,7 +30,8 @@ RUN git clone --depth=1 https://github.com/mlanies/2gc-lk-test \
     && make \
     && make install \
     && cd .. \
-    && rm -rf guacamole-server
+    && rm -rf 2gc-lk-test
+
 
 RUN apk del .build-deps \
     && rm -rf /var/cache/apk/*
