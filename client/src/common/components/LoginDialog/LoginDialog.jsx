@@ -64,22 +64,22 @@ export const LoginDialog = ({ open }) => {
     return (
         <DialogProvider disableClosing open={open}>
             <div className="login-dialog">
-                <div className="login-logo">
-                    <img src={NextermLogo} alt="Nexterm" />
-                    <h1>{firstTimeSetup ? "Registration" : "Nexterm"}</h1>
+                <div className="logo">
+                    <img src={NextermLogo} alt="2GC" />
+                    <h1>{firstTimeSetup ? "Регистрация" : "2GC"}</h1>
                 </div>
                 {error && <div className="error">{error}</div>}
                 <form className="login-form" onSubmit={submit}>
                     {firstTimeSetup &&
                         <div className="register-name-row">
                             <div className="form-group">
-                                <label htmlFor="firstName">First Name</label>
+                                <label htmlFor="firstName">Имя</label>
                                 <Input type="text" id="firstName" required icon={mdiAccountCircleOutline}
                                     placeholder="First name" autoComplete="given-name"
                                     value={firstName} setValue={setFirstName} />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="lastName">Last Name</label>
+                                <label htmlFor="lastName">Фамилия</label>
                                 <Input type="text" id="lastName" required icon={mdiAccountCircleOutline}
                                     placeholder="Last name" autoComplete="family-name"
                                     value={lastName} setValue={setLastName} />
@@ -96,7 +96,7 @@ export const LoginDialog = ({ open }) => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="password">Password</label>
+                            <label htmlFor="password">Пароль</label>
                             <Input type="password" id="password" required icon={mdiKeyOutline}
                                    placeholder="Password" autoComplete="current-password"
                                    value={password} setValue={setPassword} />
@@ -111,7 +111,7 @@ export const LoginDialog = ({ open }) => {
                         </div>
                     </>}
 
-                    <Button text={firstTimeSetup ? "Register" : "Login"} />
+                    <Button text={firstTimeSetup ? "Регистрация" : "Войти"} />
                 </form>
             </div>
         </DialogProvider>

@@ -85,11 +85,10 @@ export const Servers = () => {
                         setCurrentFolderId={setCurrentFolderId} setEditServerId={setEditServerId} openSFTP={openSFTP} />
             {activeSessions.length === 0 && <div className="welcome-area">
                 <div className="area-left">
-                    <h1>Hi, <span>{user?.firstName || "User"} {user?.lastName || "name"}</span>!</h1>
-                    <p>Welcome to Nexterm. The open-source server manager for SSH, VNC and RDP.</p>
+                    <h1>Привет, <span>{user?.firstName || "Пользователь"} {user?.lastName || "имя"}</span>!</h1>
+                    <p>Добро пожаловать в 2GC. Менеджер серверов SSH и RDP.</p>
                     <div className="button-area">
-                        <Button text="Star on GitHub" onClick={() => window.open(GITHUB_URL, "_blank")} icon={mdiStar} />
-                        <Button text="Join Discord" onClick={() => window.open(DISCORD_URL, "_blank")} icon={siDiscord.path} />
+                        <Button text="GitHub" onClick={() => window.open(GITHUB_URL, "_blank")} icon={mdiStar} />
                     </div>
                 </div>
                 <img src={WelcomeImage} alt="Welcome" />
