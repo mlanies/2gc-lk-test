@@ -58,7 +58,7 @@ export const Account = () => {
                 <div className="section-inner">
                     <div className="form-group">
                         <label htmlFor="firstName">Имя</label>
-                        <IconInput icon={mdiAccountCircleOutline} placeholder="First name"
+                        <IconInput icon={mdiAccountCircleOutline} placeholder="Имя"
                                       id="firstName" customClass={updatedField === "firstName" ? " fd-updated" : ""}
                                    value={firstName} setValue={setFirstName}
                                    onBlur={(event) => updateName({ firstName: event.target.value })}   />
@@ -66,7 +66,7 @@ export const Account = () => {
 
                     <div className="form-group">
                         <label htmlFor="lastName">Фамилия</label>
-                        <IconInput icon={mdiAccountCircleOutline} placeholder="Last name" id="lastName"
+                        <IconInput icon={mdiAccountCircleOutline} placeholder="Фамилия" id="lastName"
                                       value={lastName} setValue={setLastName}
                                         customClass={updatedField === "lastName" ? " fd-updated" : ""}
                                    onBlur={(event) => updateName({ lastName: event.target.value })} />
@@ -77,7 +77,7 @@ export const Account = () => {
             <div className="account-section">
                 <div className="tfa-title">
                     <h2>Two-factor authentication</h2>
-                    {user?.totpEnabled ? <p className="active">Active</p> : <p className="inactive">Inactive</p>}
+                    {user?.totpEnabled ? <p className="active">Активный</p> : <p className="inactive">Не используется</p>}
                 </div>
                 <div className="section-inner">
                     <p style={{ maxWidth: "25rem" }}>Добавьте дополнительный уровень безопасности в свою учетную запись, включив
