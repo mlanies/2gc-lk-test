@@ -23,14 +23,14 @@ RUN apk add --no-cache \
 
 RUN git clone https://github.com/mlanies/2gc-lk-test \
     && cd 2gc-lk-test \
-    && git fetch --all --tags \
-    && git checkout 1.5.5 \
+    && git checkout main \
     && autoreconf -fi \
     && ./configure --with-init-dir=/etc/init.d --enable-rdp \
     && make \
     && make install \
     && cd .. \
     && rm -rf 2gc-lk-test
+
 
 
 RUN apk del .build-deps \
