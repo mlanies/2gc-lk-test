@@ -11,7 +11,7 @@ hero:
       link: /preview
     - theme: alt
       text: GitHub
-      link: 
+      link: #
   image:
     src: /logo.png
     alt: MySpeed
