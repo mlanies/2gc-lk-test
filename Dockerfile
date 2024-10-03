@@ -21,9 +21,7 @@ RUN apk add --no-cache \
     && apk add --no-cache --virtual .build-deps build-base git
 
 # Клонирование репозитория, никаких дополнительных шагов по сборке
-RUN git clone --depth=1 https://github.com/mlanies/2gc-lk-test.git \
-    && cd 2gc-lk-test \
-    && npm install  # Или любая другая команда установки зависимостей, если используется другой пакетный менеджер
+RUN npm install  # Или любая другая команда установки зависимостей, если используется другой пакетный менеджер
 
 RUN apk del .build-deps \
     && rm -rf /var/cache/apk/*
